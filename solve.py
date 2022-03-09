@@ -6,11 +6,12 @@ import re
 #Между знаками и числами должен быть обязательно пробел
 
 #ВЫРАЖЕНИЕ
-a = "3.5 + 2"
+a = "1+1/2*2"
 
 #ПРОГРАММА
-l = re.findall('(\d+/\d+|\d+|\d+.\d+)\s([-*+:])', a)
-e = re.findall('(\d+/\d+|\d+|\d+.\d+)$', a)
+a = re.sub('\s+', '', a)
+l = re.findall('(\d+/\d+|\d+|\d+\.\d+)([-*+:])', a)
+e = re.findall('(\d+/\d+|\d+|\d+\.\d+)$', a)
 mainlist = l + e
 print(mainlist)
 
